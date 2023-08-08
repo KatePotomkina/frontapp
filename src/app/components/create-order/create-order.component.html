@@ -1,0 +1,46 @@
+
+<div class="container">
+    <h1 class="mb-3">Add New Order</h1>
+    <form #form="ngForm" (ngSubmit)="addOrder()">
+      <div class="mb-3">
+        <label for="createdAt" class="form-label">createdAt</label>
+        <input type="date" class="form-control" id="createdAt" name="createdAt" [(ngModel)]="createOrderRequest.createdAt">
+      </div>
+      <div class="mb-3">
+        <label for="totalCost" class="form-label">totalCost</label>
+        <input type="number" class="form-control" id="totalCost" name="totalCost" [(ngModel)]="createOrderRequest.totalCost">
+      </div>
+      <button type="button" class="btn btn-secondary">New Products</button>
+
+      <div class="mb-3">
+        <label for="comment" class="form-label">Comment</label>
+        <input type="text" class="form-control" id="comment" name="comment" [(ngModel)]="createOrderRequest.comment">
+      </div>
+      <div class="mb-3">
+        <label for="currentStatus" class="form-label">Current Status</label>
+        <select class="form-control" id="currentStatus" name="currentStatus" [(ngModel)]="createOrderRequest.currentStatus">
+          <option value="New">New</option>
+          <option value="Paid">Paid</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Closed">Closed</option>
+        </select>
+      </div>
+      
+      <div class="mb-3">
+        <label for="customerId" class="form-label">Customer</label>
+        <select class="form-control" id="customerId" name="customerId" [(ngModel)]="createOrderRequest.customerId" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+      
+      
+    
+     
+      <button type="submit" class="btn btn-primary" (submit)="addOrder">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+  
+
